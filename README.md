@@ -59,6 +59,9 @@ Raw Data → Preprocessing → Feature Engineering → Model Core → Latent Emb
 
 ## future enhancments
 . integrate more assets & micro indicators
+
 . add transformer-based predictive regime forecasting
+
 . real time alerts for early crisis detection
+
 . improve clustering with temporal continuity ( for exemple HMMs, hidden markov models)
