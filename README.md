@@ -70,3 +70,13 @@ Raw Data → Preprocessing → Feature Engineering → Model Core → Latent Emb
 . real time alerts for early crisis detection
 
 . improve clustering with temporal continuity ( for exemple HMMs, hidden markov models)
+
+
+---
+
+## output images
+![alt text](<Capture d'écran 2025-09-09 020144.png>)
+
+![alt text](<Capture d'écran 2025-09-09 020126.png>)
+
+![alt text](<Capture d'écran 2025-09-09 020103.png>)
