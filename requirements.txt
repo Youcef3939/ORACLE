@@ -1,0 +1,12 @@
+pandas
+numpy
+yfinance
+scikit-learn
+torch
+torchvision
+matplotlib
+seaborn
+plotly
+umap-learn
+hdbscan
+streamlit
