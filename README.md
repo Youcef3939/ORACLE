@@ -10,10 +10,15 @@
 
 ## features
 -**multi asset awarness:** stocks, bonds, commodities, FX, and macro indicators
+
 -**latent market embddings:** variational autoencoders (VAE) or transformers to encode market states
+
 -**regime detection:** unsupervised clustering reveals hidden market regimes (bull, bear, crisis, recovery)
+
 -**visualization dashboard:** interactive timeline, embeddings projection, and asset/macro overlays
+
 -**predictive module:** forecast probabilities of upcoming regimes
+
 -**scenario simulation:** explore "what-if" market events and their impact on regimes
 
 ---
