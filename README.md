@@ -52,13 +52,13 @@ streamlit run dashboard/app.py
 ---
 
 ## architecture
-[Data Sources] --> [Data Pipeline] --> [Feature Engineering] --> [Model Core] --> [Regime Detection] --> [Visualization & Dashboard]
+[data sources] --> [data pipeline] --> [feature engineering] --> [model core] --> [regime detection] --> [visualization & dashboard]
 
 
 ---
 
 ## data flow
-Raw Data → Preprocessing → Feature Engineering → Model Core → Latent Embeddings → Clustering → Regime Labels → Visualization / Alerts
+raw Data → preprocessing → feature engineering → model core → latent embeddings → clustering → regime labels → visualization / alerts
 
 
 ---
