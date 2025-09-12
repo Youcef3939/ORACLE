@@ -58,7 +58,7 @@ streamlit run dashboard/app.py
 ---
 
 ## data flow
-raw Data → preprocessing → feature engineering → model core → latent embeddings → clustering → regime labels → visualization / alerts
+raw Data → preprocessing → feature engineering → model core → latent embeddings → clustering → regime labels → visualization / alerts 
 
 
 ---
