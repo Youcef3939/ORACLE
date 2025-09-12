@@ -1,4 +1,4 @@
-# ORACLE; market regime detector  
+# ORACLE; market regime detector   
 ![Market Oracle](https://img.shields.io/badge/ORACLE-🔮-purple)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
 ![Streamlit](https://img.shields.io/badge/Streamlit-Dashboard-red?logo=streamlit)
