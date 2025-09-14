@@ -10,7 +10,7 @@
 ---
 
 ## features
--**multi asset awarness:** stocks, bonds, commodities, FX, and macro indicators 
+-**multi asset awarness:** stocks, bonds, commodities, FX, and macro indicators  
 
 -**latent market embddings:** variational autoencoders (VAE) or transformers to encode market states 
 
