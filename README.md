@@ -8,7 +8,7 @@
 ![AI](https://img.shields.io/badge/AI%20ML-transformers-orange)
 ![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103) 
  
-**ORACLE** is a multi-asset market regime detection system that uncovers hidden market states, visualizes regime shifts over time, and can provide early warnings for potentiel crises or bull runs
+**ORACLE** is a multi-asset market regime detection system that uncovers hidden market states, visualizes regime shifts over time, and can provide early warnings for potentiel crises or bull runs 
 
 ---
 
