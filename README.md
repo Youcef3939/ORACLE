@@ -24,7 +24,7 @@
 -**predictive module:** forecast probabilities of upcoming regimes 
 
 -**scenario simulation:** explore "what-if" market events and their impact on regimes 
-
+ 
 ---
 
 ## installation
