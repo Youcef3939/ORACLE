@@ -49,7 +49,7 @@ pip install -r requirements.txt
 
 4.**run the dashboard:** 
 
-streamlit run dashboard/app.py
+streamlit run dashboard/app.py 
 
 
 ---
