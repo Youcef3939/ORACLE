@@ -45,7 +45,7 @@ venv\Scripts\activate     # Windows
 
 pip install -r requirements.txt
 
-3.**explore data & prototypes in notebooks/** 
+3.**explore data & prototypes in notebooks/**  
 
 4.**run the dashboard:** 
 
