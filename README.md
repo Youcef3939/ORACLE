@@ -35,7 +35,7 @@ git clone https://github.com/Youcef3939/ORACLE.git
 
 cd ORACLE
 
-2.**create a virtual environment:** 
+2.**create a virtual environment:**  
 
 python -m venv venv
 
