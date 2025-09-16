@@ -21,7 +21,7 @@
 
 -**visualization dashboard:** interactive timeline, embeddings projection, and asset/macro overlays
 
--**predictive module:** forecast probabilities of upcoming regimes
+-**predictive module:** forecast probabilities of upcoming regimes 
 
 -**scenario simulation:** explore "what-if" market events and their impact on regimes
 
