@@ -11,7 +11,7 @@
 **ORACLE** is a multi-asset market regime detection system that uncovers hidden market states, visualizes regime shifts over time, and can provide early warnings for potentiel crises or bull runs  
  
 ---
-
+ 
 ## features 
 -**multi asset awarness:** stocks, bonds, commodities, FX, and macro indicators  
  
