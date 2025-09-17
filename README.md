@@ -1,6 +1,6 @@
 # ORACLE: market regime detector
 
-<img width="576" height="447" alt="image" src="https://github.com/user-attachments/assets/12388386-fd74-446a-af75-2c97d2151d91" />
+<img width="576" height="600" alt="image" src="https://github.com/user-attachments/assets/12388386-fd74-446a-af75-2c97d2151d91" />
 
 ![Market Oracle](https://img.shields.io/badge/ORACLE-🔮-purple)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?logo=python)
