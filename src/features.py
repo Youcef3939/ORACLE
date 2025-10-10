@@ -1,6 +1,3 @@
-# features.py
-
-
 import os
 import pandas as pd
 import numpy as np
@@ -11,30 +8,23 @@ FEATURES_OUTPUT_PATH = os.path.join(PROCESSED_DIR, "features.parquet")
 
 class FeatureEngineer:
     def __init__(self, window=5):
-        """
-        window: int, rolling window size for moving averages and volatility
-        """
         self.window = window
         self.latent = pd.read_parquet(LATENT_EMBEDDINGS_PATH)
         self.features = pd.DataFrame(index=self.latent.index)
 
     def add_moving_average(self):
-        """Add rolling mean of latent dimensions"""
         for col in self.latent.columns:
             self.features[f"{col}_ma{self.window}"] = self.latent[col].rolling(self.window).mean()
 
     def add_volatility(self):
-        """Add rolling std (volatility) of latent dimensions"""
         for col in self.latent.columns:
             self.features[f"{col}_vol{self.window}"] = self.latent[col].rolling(self.window).std()
 
     def add_returns(self):
-        """Add daily returns for each latent dimension"""
         for col in self.latent.columns:
             self.features[f"{col}_ret"] = self.latent[col].pct_change()
 
     def add_lags(self, n_lags=3):
-        """Add lag features"""
         for col in self.latent.columns:
             for lag in range(1, n_lags+1):
                 self.features[f"{col}_lag{lag}"] = self.latent[col].shift(lag)
