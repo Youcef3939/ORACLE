@@ -1,5 +1,3 @@
-# src/model_core.py
-
 import os
 import torch
 import torch.nn as nn
@@ -10,17 +8,12 @@ from preprocessing import PROCESSED_MATRIX_PATH, PROCESSED_DIR
 LATENT_EMBEDDINGS_PATH = os.path.join(PROCESSED_DIR, "latent_embeddings.parquet")
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-
-# VAE Model
-
 class VAE(nn.Module):
     def __init__(self, input_dim, latent_dim=4):
         super(VAE, self).__init__()
-        # Encoder
         self.fc1 = nn.Linear(input_dim, 64)
         self.fc2_mu = nn.Linear(64, latent_dim)
         self.fc2_logvar = nn.Linear(64, latent_dim)
-        # Decoder
         self.fc3 = nn.Linear(latent_dim, 64)
         self.fc4 = nn.Linear(64, input_dim)
         self.relu = nn.ReLU()
@@ -44,18 +37,10 @@ class VAE(nn.Module):
         recon = self.decode(z)
         return recon, mu, logvar
 
-
-
-# Loss function
-
 def vae_loss(recon_x, x, mu, logvar):
     recon_loss = nn.MSELoss()(recon_x, x)
-    # KL Divergence
     kld = -0.5 * torch.sum(1 + logvar - mu.pow(2) - logvar.exp()) / x.size(0)
     return recon_loss + kld
-
-
-# Training function
 
 def train_vae(data, input_dim, latent_dim=4, epochs=100, batch_size=32, lr=1e-3):
     model = VAE(input_dim, latent_dim).to(DEVICE)
@@ -79,9 +64,6 @@ def train_vae(data, input_dim, latent_dim=4, epochs=100, batch_size=32, lr=1e-3)
             print(f"Epoch [{epoch+1}/{epochs}] Loss: {total_loss/len(dataset):.6f}")
     return model
 
-
-# Generate latent embeddings
-
 def generate_latent_embeddings(model, data):
     model.eval()
     with torch.no_grad():
@@ -93,15 +75,10 @@ def generate_latent_embeddings(model, data):
         print(f"Latent embeddings saved to {LATENT_EMBEDDINGS_PATH}")
         return df_embeddings
 
-
-
-# Run pipeline
-
 if __name__ == "__main__":
-    # Load processed matrix
     df = pd.read_parquet(PROCESSED_MATRIX_PATH)
     input_dim = df.shape[1]
-    print(f"Training VAE on {input_dim} assets over {df.shape[0]} days...")
+    print(f"training VAE on {input_dim} assets over {df.shape[0]} days...")
 
     vae_model = train_vae(df, input_dim, latent_dim=4, epochs=100, batch_size=32, lr=1e-3)
     embeddings = generate_latent_embeddings(vae_model, df)
