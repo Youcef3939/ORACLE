@@ -1,4 +1,3 @@
-# src/regime_detector.py
 import sys
 import os
 import pandas as pd
@@ -12,17 +11,6 @@ REGIME_LABELS = {0: "Bull", 1: "Bear", 2: "Crisis", 3: "Recovery"}
 
 
 def detect_regimes(latent_df, min_cluster_size=30, min_samples=10):
-    """
-    Cluster latent embeddings to detect market regimes.
-    
-    Args:
-        latent_df (pd.DataFrame): latent embeddings from VAE
-        min_cluster_size (int): minimum size of clusters for HDBSCAN
-        min_samples (int): controls how conservative clustering is
-    
-    Returns:
-        pd.DataFrame: latent embeddings with regime labels
-    """
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(latent_df.values)
 
@@ -45,7 +33,5 @@ def detect_regimes(latent_df, min_cluster_size=30, min_samples=10):
 if __name__ == "__main__":
     df_latent = pd.read_parquet(LATENT_EMBEDDINGS_PATH)
     print(f"Loaded {df_latent.shape[0]} days of latent embeddings.")
-
-    # Detect regimes
     df_regimes = detect_regimes(df_latent)
     print(df_regimes.head())
