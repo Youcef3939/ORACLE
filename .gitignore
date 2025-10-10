@@ -6,13 +6,10 @@ __pycache__/
 .venv/
 venv/
 .env
-
 .ipynb_checkpoints/
-
 data/raw/
 data/processed/
 *.parquet
 *.csv
-
 .DS_Store
 Thumbs.db
