@@ -1,6 +1,3 @@
-# predictive.py
-
-
 import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -9,7 +6,6 @@ from sklearn.metrics import classification_report, accuracy_score
 from features import FEATURES_OUTPUT_PATH
 from regime_detector import REGIME_OUTPUT_PATH
 
-# Paths
 PROCESSED_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "processed")
 PREDICTIONS_PATH = os.path.join(PROCESSED_DIR, "predicted_regimes.parquet")
 
@@ -17,7 +13,7 @@ class PredictiveModel:
     def __init__(self):
         self.features = pd.read_parquet(FEATURES_OUTPUT_PATH)
         self.regimes = pd.read_parquet(REGIME_OUTPUT_PATH)
-        self.regimes = self.regimes.reindex(self.features.index)  # align dates
+        self.regimes = self.regimes.reindex(self.features.index) 
         self.model = RandomForestClassifier(n_estimators=200, random_state=42)
 
     def train_test_split(self, test_size=0.2):
