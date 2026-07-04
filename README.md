@@ -375,6 +375,60 @@ config = {
 
 detector = MarketRegimeDetector(**config)
 ```
+## diagram 
+
+```mermaid
+flowchart TD
+
+subgraph group_core["Core pipeline"]
+  node_data_fetcher["Fetcher<br/>ingestion<br/>[data_fetcher.py]"]
+  node_preprocessing["Preprocess<br/>conditioning<br/>[preprocessing.py]"]
+  node_features["Features<br/>engineering<br/>[features.py]"]
+  node_model_core{{"Model core<br/>sequence model<br/>[model_core.py]"}}
+  node_regime_detector["Detector<br/>orchestration<br/>[regime_detector.py]"]
+  node_predictive["Predictive<br/>forecasting<br/>[predictive.py]"]
+  node_visualization["Visuals<br/>reporting<br/>[visualization.py]"]
+end
+
+subgraph group_ui["Dashboard"]
+  node_dashboard_app["Dashboard app<br/>streamlit ui<br/>[app.py]"]
+end
+
+node_market_data[("Market data<br/>external source")]
+
+node_market_data -->|"source"| node_data_fetcher
+node_data_fetcher -->|"raw data"| node_preprocessing
+node_preprocessing -->|"prepared series"| node_features
+node_features -->|"signals"| node_model_core
+node_model_core -->|"embeddings"| node_regime_detector
+node_regime_detector -->|"regimes"| node_predictive
+node_regime_detector -->|"outputs"| node_visualization
+node_predictive -->|"forecasts"| node_visualization
+node_visualization -->|"views"| node_dashboard_app
+node_regime_detector -->|"analysis"| node_dashboard_app
+
+click node_data_fetcher "https://github.com/youcef3939/oracle/blob/main/src/data_fetcher.py"
+click node_preprocessing "https://github.com/youcef3939/oracle/blob/main/src/preprocessing.py"
+click node_features "https://github.com/youcef3939/oracle/blob/main/src/features.py"
+click node_model_core "https://github.com/youcef3939/oracle/blob/main/src/model_core.py"
+click node_regime_detector "https://github.com/youcef3939/oracle/blob/main/src/regime_detector.py"
+click node_predictive "https://github.com/youcef3939/oracle/blob/main/src/predictive.py"
+click node_visualization "https://github.com/youcef3939/oracle/blob/main/src/visualization.py"
+click node_dashboard_app "https://github.com/youcef3939/oracle/blob/main/dashboard/app.py"
+
+classDef toneNeutral fill:#f8fafc,stroke:#334155,stroke-width:1.5px,color:#0f172a
+classDef toneBlue fill:#dbeafe,stroke:#2563eb,stroke-width:1.5px,color:#172554
+classDef toneAmber fill:#fef3c7,stroke:#d97706,stroke-width:1.5px,color:#78350f
+classDef toneMint fill:#dcfce7,stroke:#16a34a,stroke-width:1.5px,color:#14532d
+classDef toneRose fill:#ffe4e6,stroke:#e11d48,stroke-width:1.5px,color:#881337
+classDef toneIndigo fill:#e0e7ff,stroke:#4f46e5,stroke-width:1.5px,color:#312e81
+classDef toneTeal fill:#ccfbf1,stroke:#0f766e,stroke-width:1.5px,color:#134e4a
+class node_data_fetcher,node_preprocessing,node_features,node_model_core,node_regime_detector,node_predictive,node_visualization toneBlue
+class node_dashboard_app toneAmber
+class node_market_data toneNeutral
+```
+---
+
 
 ## 📊 Dashboard Preview
 
